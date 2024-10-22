@@ -1,6 +1,5 @@
 //Imports
 import mongoose from "mongoose";
-import cakeSchema from "./cakeSchema.mjs";
 
 //Create schema for ice cream 
 const iceCreamSchema = new mongoose.Schema({

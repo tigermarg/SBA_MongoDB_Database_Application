@@ -4,6 +4,8 @@ import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 import connectDB from './db/conn.mjs';
 import cakeRoute from './routes/cakeRoute.mjs';
+import iceCreamRoute from './routes/iceCreamRoute.mjs';
+import pieRoute from './routes/pieRoute.mjs';
 
 //Setups
 const app = express();
@@ -19,6 +21,8 @@ app.use(bodyParser.json({ extended: true }));
 
 //Routes
 app.use('/cake', cakeRoute);
+app.use('/ice_cream', iceCreamRoute);
+app.use('/pie', pieRoute);
 
 //Listen
 app.listen(PORT, () => {
