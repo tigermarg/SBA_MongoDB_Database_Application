@@ -1,5 +1,7 @@
+//Imports
 import mongoose from "mongoose";
 
+//Create schema for pie
 const pieSchema = new mongoose.Schema({
     flavor: {
         type: String,
@@ -8,7 +10,8 @@ const pieSchema = new mongoose.Schema({
     },
     expiration: {
         type: Date,
-        required: true
+        min: ('2024-11-15'),
+        required: true,
     },
     qty: {
         type: Number
@@ -16,6 +19,8 @@ const pieSchema = new mongoose.Schema({
 
 })
 
-productSchema.index({flavor: 1});
+//Index pie flavor
+pieSchema.index({flavor: 1});
 
+//Export schema named "Pie"
 export default mongoose.model('Pie', pieSchema)

@@ -1,12 +1,15 @@
+//Imports
 import mongoose from "mongoose";
+import cakeSchema from "./cakeSchema.mjs";
 
+//Create schema for ice cream 
 const iceCreamSchema = new mongoose.Schema({
     flavor: {
         type: String,
         required: true,
         unique: true,
     },
-    special: {
+    seasonal: {
         type: Boolean,
     },
     gallons: {
@@ -15,6 +18,8 @@ const iceCreamSchema = new mongoose.Schema({
 
 })
 
-productSchema.index({flavor: 1});
+//Index ice cream flavor
+iceCreamSchema.index({flavor: 1});
 
+//Export schema named "IceCream"
 export default mongoose.model('IceCream', iceCreamSchema)

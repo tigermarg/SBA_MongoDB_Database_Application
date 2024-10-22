@@ -1,5 +1,7 @@
+//Imports
 import mongoose from "mongoose";
 
+//Create schema for cake
 const cakeSchema = new mongoose.Schema({
     flavor: {
         type: String,
@@ -8,14 +10,17 @@ const cakeSchema = new mongoose.Schema({
     },
     expiration: {
         type: Date,
-        required: true
+        min: ('2024-11-15'),
+        required: true,
     },
-    special: {
+    seasonal: {
         type: Boolean
     }
 
 })
 
-productSchema.index({flavor: 1});
+//Index cake flavor
+cakeSchema.index({flavor: 1});
 
+//Expore schema named "Cake"
 export default mongoose.model('Cake', cakeSchema)

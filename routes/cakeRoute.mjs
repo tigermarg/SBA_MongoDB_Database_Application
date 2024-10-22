@@ -1,11 +1,17 @@
 //Imports
 import express from 'express';
+import Cake from '../models/cakeSchema.mjs';
 
 const router = express.Router();
 
 //Create
 router.post('/', async (req, res) => {
     try{
+        let newCake = new Cake(req.body);
+
+        await newCake.save();
+
+        res.json(newCake)
 
     } catch(err) {
         console.error(err)
@@ -24,7 +30,7 @@ router.get('/', async (req, res) => {
 })
 
 //Update
-router.put('/', async (req, res) => {
+router.put('/:id', async (req, res) => {
     try{
 
     } catch(err) {
@@ -34,7 +40,7 @@ router.put('/', async (req, res) => {
 })
 
 //Delete
-router.delete('/', async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try{
 
     } catch(err) {
