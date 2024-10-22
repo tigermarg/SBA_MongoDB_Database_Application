@@ -2,6 +2,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
+import mainRoute from './routes/mainRoute.mjs';
 
 //Setups
 const app = express();
@@ -15,6 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ extended: true }));
 
 //Routes
+app.use('/main', mainRoute);
 
 //Listen
 app.listen(PORT, () => {
