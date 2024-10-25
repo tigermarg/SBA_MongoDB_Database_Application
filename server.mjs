@@ -6,6 +6,8 @@ import connectDB from './db/conn.mjs';
 import cakeRoute from './routes/cakeRoute.mjs';
 import iceCreamRoute from './routes/iceCreamRoute.mjs';
 import pieRoute from './routes/pieRoute.mjs';
+import IceCream from './models/iceCreamSchema.mjs'
+import { iceCreamData } from './data/iceCreamData.mjs';
 
 //Setups
 const app = express();
@@ -23,6 +25,16 @@ app.use(bodyParser.json({ extended: true }));
 app.use('/cake', cakeRoute);
 app.use('/ice_cream', iceCreamRoute);
 app.use('/pie', pieRoute);
+
+//Seed route
+app.get('/seed', async (req, res) => {
+    // //Optional Step
+    // await IceCream.deleteMany({})
+
+    // Create items in database
+    await IceCream.create(iceCreamData)
+    res.json(iceCreamData)
+  });
 
 //Listen
 app.listen(PORT, () => {

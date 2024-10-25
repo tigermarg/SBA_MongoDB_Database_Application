@@ -5,13 +5,13 @@ import mongoose from "mongoose";
 const pieSchema = new mongoose.Schema({
     flavor: {
         type: String,
-        required: true,
-        unique: true,
+        required: true, //validation
+        unique: true,   //validation
     },
     expiration: {
         type: Date,
-        min: ('2024-11-15'),
-        required: true,
+        min: ('2024-11-15'),    //validation
+        required: true, //validation
     },
     qty: {
         type: Number

@@ -5,8 +5,8 @@ import mongoose from "mongoose";
 const iceCreamSchema = new mongoose.Schema({
     flavor: {
         type: String,
-        required: true,
-        unique: true,
+        required: true, //validation
+        unique: true,   //validation
     },
     seasonal: {
         type: Boolean,
