@@ -26,15 +26,13 @@ app.use('/cake', cakeRoute);
 app.use('/ice_cream', iceCreamRoute);
 app.use('/pie', pieRoute);
 
-// //Seed route
-// app.get('/seed', async (req, res) => {
-//     // //Optional Step
-//     // await IceCream.deleteMany({})
+//Seed route
+app.get('/seed', async (req, res) => {
 
-//     // Create items in database
-//     await IceCream.create(iceCreamData)
-//     res.json(iceCreamData)
-//   });
+    // Create items in database
+    await IceCream.create(iceCreamData)
+    res.json(iceCreamData)
+  });
 
 //Listen
 app.listen(PORT, () => {
