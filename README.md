@@ -8,18 +8,17 @@ Windows OS, VS Code
 
 ### How to Get Started
 * Clone the repository
-* Install Dependencies
-<br>`npm install`
-* npm start
-<br>`npm start`
-* Home URL
-<br>`http://localhost:3000`
+* Install Dependencies: `npm install`
+* npm start: `npm start`
 * Interact with the server through HTTP requests to retrieve data:
-<br>- Cakes: `http://localhost:3000/cake`
-<br>- Ice Creams: `http://localhost:3000/ice_cream`
-<br>- Pies: `http://localhost:3000/pie`
-* Use id parameters in PUT and DELETE requests.
-<br>- Example: `http://localhost:3000/ice_cream/671809f47316c512437fa246`
+
+| Endpoint | Description |
+| --- | --- 
+| `localhost:3000` | Home URL |
+| `localhost:3000/cake` | HTTP request for *cake* data |
+| `localhost:3000/ice_cream` | HTTP request for *ice cream* data |
+| `localhost:3000/pie` | HTTP request for *pie* data |
+| `localhost:3000/ice_cream/671809f47316c512437fa246` | Sample id parameter for PUT & DELETE requests |
 
 ### Built with:
 * Node.js: https://nodejs.org/en/download/package-manager
