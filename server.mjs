@@ -28,8 +28,6 @@ app.use('/pie', pieRoute);
 
 //Seed route
 // app.get('/seed', async (req, res) => {
-//     //Delete data  
-//     await Produce.deleteMany({})
 //     // Create items in database
 //     await IceCream.create(iceCreamData)
 //     res.json(iceCreamData)
